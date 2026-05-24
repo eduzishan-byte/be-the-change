@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+position:relative;
+}
+
+/* BACKGROUND */
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:
+radial-gradient(circle at top left,
+rgba(255,0,60,0.15),
+transparent 30%),
+
+radial-gradient(circle at bottom right,
+rgba(255,255,255,0.08),
+transparent 30%);
+
+animation:bgMove 10s infinite alternate;
+
+z-index:-3;
+}
+
+@keyframes bgMove{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.2);
+}
+
+}
+
+/* PARTICLES */
+
+body::after{
+content:'';
+position:fixed;
+
+width:200%;
+height:200%;
+
+background-image:
+radial-gradient(white 1px, transparent 1px);
+
+background-size:50px 50px;
+
+opacity:0.03;
+
+animation:particles 40s linear infinite;
+
+z-index:-2;
+}
+
+@keyframes particles{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-200px,-200px);
+}
+
+}
+
+/* TAPE CONTAINER */
+
+.tape-container{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9999;
+}
+
+/* TAPES */
+
+/* ========================= */
+/* CINEMATIC WARNING TAPES */
+/* ========================= */
+
+.tape-container{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9999;
+}
+
+/* MAIN TAPE STYLE */
+
+.tape{
+
+position:absolute;
+
+width:160%;
+
+padding:30px 0;
+
+background:
+linear-gradient(
+90deg,
+#ff0000,
+#ff3c3c,
+#ff0000
+);
+
+color:white;
+
+font-size:38px;
+
+font-weight:900;
+
+letter-spacing:8px;
+
+text-align:center;
+
+text-transform:uppercase;
+
+white-space:nowrap;
+
+opacity:0;
+
+box-shadow:
+0 0 30px #ff0000,
+0 0 60px #ff0000,
+0 0 120px rgba(255,0,0,0.6);
+
+backdrop-filter:blur(10px);
+}
+
+/* TAPE POSITIONS */
+
+.tape1{
+
+top:10%;
+
+left:-180%;
+
+transform:rotate(-12deg);
+
+animation:tape1 2.5s ease forwards;
+}
+
+.tape2{
+
+top:38%;
+
+right:-180%;
+
+transform:rotate(10deg);
+
+animation:tape2 2.8s ease forwards;
+}
+
+.tape3{
+
+bottom:22%;
+
+left:-180%;
+
+transform:rotate(6deg);
+
+animation:tape3 3s ease forwards;
+}
+
+.tape4{
+
+top:65%;
+
+right:-180%;
+
+transform:rotate(-8deg);
+
+animation:tape4 3.2s ease forwards;
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes tape1{
+
+0%{
+left:-180%;
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+45%{
+left:-20%;
+opacity:1;
+}
+
+70%{
+left:-20%;
+opacity:1;
+}
+
+100%{
+left:180%;
+opacity:0;
+}
+
+}
+
+@keyframes tape2{
+
+0%{
+right:-180%;
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+45%{
+right:-20%;
+opacity:1;
+}
+
+70%{
+right:-20%;
+opacity:1;
+}
+
+100%{
+right:180%;
+opacity:0;
+}
+
+}
+
+@keyframes tape3{
+
+0%{
+left:-180%;
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+45%{
+left:-20%;
+opacity:1;
+}
+
+70%{
+left:-20%;
+opacity:1;
+}
+
+100%{
+left:180%;
+opacity:0;
+}
+
+}
+
+@keyframes tape4{
+
+0%{
+right:-180%;
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+45%{
+right:-20%;
+opacity:1;
+}
+
+70%{
+right:-20%;
+opacity:1;
+}
+
+100%{
+right:180%;
+opacity:0;
+}
+
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:100px 20px;
+}
+
+/* TITLE */
+
+.main-title{
+
+font-size:120px;
+
+font-weight:900;
+
+letter-spacing:10px;
+
+color:white;
+
+text-shadow:
+0 0 20px rgba(255,255,255,0.3);
+
+animation:slideDown 2s ease;
+}
+
+.sub-title{
+
+margin-top:20px;
+
+font-size:38px;
+
+color:#ff003c;
+
+letter-spacing:5px;
+
+text-shadow:
+0 0 10px #ff003c;
+}
+
+/* PROFILE */
+
+.profile-pic{
+
+width:320px;
+height:320px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+margin-top:50px;
+
+border:4px solid rgba(255,255,255,0.2);
+
+box-shadow:
+0 0 30px rgba(255,255,255,0.2);
+
+animation:
+fadeIn 2s ease,
+floatImage 6s ease-in-out infinite;
+
+transition:0.5s;
+}
+
+.profile-pic:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 40px rgba(255,0,60,0.5);
+}
+
+/* ABOUT */
+
+.about-box{
+
+max-width:900px;
+
+margin-top:60px;
+
+padding:40px;
+
+background:rgba(255,255,255,0.04);
+
+border-radius:30px;
+
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,0.08);
+
+box-shadow:
+0 0 30px rgba(255,255,255,0.05);
+}
+
+.about-box h2{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+color:#ff003c;
+}
+
+.about-box p{
+
+line-height:2;
+
+font-size:18px;
+
+color:#ddd;
+}
+
+/* SECTION */
+
+.section-heading{
+
+text-align:center;
+
+font-size:60px;
+
+margin-bottom:70px;
+
+color:white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.3);
+}
+
+.tracker-section{
+padding:100px 40px;
+}
+
+/* CARDS */
+
+.challenge-card{
+
+background:rgba(255,255,255,0.04);
+
+border-left:4px solid #ff003c;
+
+padding:40px;
+
+border-radius:30px;
+
+margin-bottom:50px;
+
+backdrop-filter:blur(10px);
+
+transition:0.5s;
+}
+
+.challenge-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 30px rgba(255,0,60,0.3);
+}
+
+.challenge-card h2{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+color:white;
+}
+
+.challenge-card p{
+
+line-height:2;
+
+font-size:17px;
+
+color:#ccc;
+
+margin-bottom:30px;
+}
+
+/* DAYS */
+
+.days-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(90px,1fr));
+
+gap:15px;
+}
+
+.day-box{
+
+height:90px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#0f0f0f;
+
+border:2px solid rgba(255,255,255,0.08);
+
+border-radius:20px;
+
+cursor:pointer;
+
+font-weight:700;
+
+transition:0.4s;
+}
+
+.day-box:hover{
+
+transform:scale(1.05);
+
+border-color:#ff003c;
+
+box-shadow:
+0 0 20px rgba(255,0,60,0.3);
+}
+
+/* COMPLETED */
+
+.day-box.completed{
+
+background:#00ff88;
+
+color:black;
+
+font-size:30px;
+
+border:none;
+
+box-shadow:
+0 0 20px #00ff88,
+0 0 40px #00ff88;
+
+animation:pop 0.3s ease;
+}
+
+/* FAILED */
+
+.day-box.failed{
+
+background:#ff003c;
+
+color:white;
+
+font-size:30px;
+
+border:none;
+
+box-shadow:
+0 0 20px #ff003c,
+0 0 40px #ff003c;
+
+animation:shake 0.3s ease;
+}
+
+/* CHART */
+
+.chart-section{
+padding:100px 40px;
+}
+
+.chart-box{
+
+height:500px;
+
+background:rgba(255,255,255,0.04);
+
+padding:40px;
+
+border-radius:30px;
+
+backdrop-filter:blur(10px);
+}
+
+/* EXTRA */
+
+.extra-section{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+padding:100px 40px;
+}
+
+.extra-card{
+
+background:rgba(255,255,255,0.04);
+
+padding:40px;
+
+border-radius:30px;
+
+backdrop-filter:blur(10px);
+
+transition:0.4s;
+}
+
+.extra-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 20px rgba(255,0,60,0.3);
+}
+
+.extra-card h2{
+
+font-size:35px;
+
+margin-bottom:20px;
+
+color:#ff003c;
+}
+
+.extra-card p{
+
+line-height:2;
+
+color:#ddd;
+}
+
+
+/* ENDING */
+
+.ending-section{
+
+padding:150px 20px;
+
+text-align:center;
+}
+
+.ending-section h1{
+
+font-size:65px;
+
+display:inline-block;
+
+color:white;
+
+animation:
+glowText 3s infinite alternate,
+floatText 5s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideDown{
+
+from{
+opacity:0;
+transform:translateY(-100px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:scale(0.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+@keyframes floatImage{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+@keyframes glowText{
+
+from{
+text-shadow:
+0 0 10px #ff003c;
+}
+
+to{
+text-shadow:
+0 0 20px #ff003c,
+0 0 40px white;
+}
+
+}
+
+@keyframes floatText{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(0.7);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-5px);}
+50%{transform:translateX(5px);}
+75%{transform:translateX(-5px);}
+100%{transform:translateX(0);}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.main-title{
+font-size:60px;
+}
+
+.sub-title{
+font-size:24px;
+}
+
+.profile-pic{
+width:220px;
+height:220px;
+}
+
+.section-heading{
+font-size:38px;
+}
+
+.extra-section{
+grid-template-columns:1fr;
+}
+
+.ending-section h1{
+font-size:35px;
+}
+
+/* ADMIN BUTTON */
+
+#adminBtn{
+
+position:fixed;
+
+top:20px;
+right:20px;
+
+padding:12px 24px;
+
+background:#ff003c;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+font-weight:700;
+
+cursor:pointer;
+
+z-index:10000;
+
+box-shadow:
+0 0 20px #ff003c;
+
+transition:0.3s;
+}
+
+#adminBtn:hover{
+
+transform:scale(1.1);
+
+box-shadow:
+0 0 30px #ff003c;
+}
+  
+}
