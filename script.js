@@ -27,7 +27,7 @@ days:30
 },
 
 {
-title:"4. Daily Prayer",
+title:"4. The Daily Meditation",
 desc:"As an act of meditation and discipline, I’ll pray 5 times a day to God. Since I’m Muslim, I already have a powerful form of meditation in my daily life. This will help me improve my focus, calm my mind, and gain stronger control over my actions",
 days:30
 },
